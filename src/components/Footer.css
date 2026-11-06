@@ -1,0 +1,154 @@
+.footer {
+  background-color: var(--c-cream);
+  color: var(--c-mahogany);
+  padding: 0 40px 40px;
+}
+
+.footer-top-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.footer-headline {
+  font-size: 5.5rem;
+  margin-bottom: 50px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.flex-2 {
+  flex: 2;
+  max-width: 500px;
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.footer-col h3 {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-col p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.newsletter-form input {
+  padding: 12px;
+  border: 1px solid rgba(57, 8, 10, 0.2);
+  background: transparent;
+  color: var(--c-mahogany);
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.newsletter-form button {
+  background: transparent;
+  border: 1.5px solid var(--c-mahogany);
+  color: var(--c-mahogany);
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+.newsletter-form button:hover {
+  background: var(--c-mahogany);
+  color: var(--c-cream);
+}
+
+.tc-link {
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+.mt-4 {
+  margin-top: 30px;
+}
+
+.f-light {
+  font-size: 0.85rem !important;
+  opacity: 0.8;
+  margin-top: 15px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(57, 8, 10, 0.1);
+  padding-top: 30px;
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 6px;
+}
+
+.pay-box {
+  border: 1px solid var(--c-mahogany);
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 0 20px 40px;
+  }
+  .footer-headline {
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+  .footer-grid {
+    flex-direction: column; /* Stacks all footer columns */
+    gap: 40px;
+  }
+  .flex-2 {
+    max-width: 100%;
+  }
+  .newsletter-form {
+    flex-direction: column; /* Stacks the input and button */
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

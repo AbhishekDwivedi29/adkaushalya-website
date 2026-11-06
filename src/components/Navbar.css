@@ -1,0 +1,193 @@
+.announcement-bar {
+  background-color: var(--c-mahogany);
+  color: var(--c-cream);
+  text-align: center;
+  padding: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--c-cream);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center; /* Aligns the hamburger icon with the text links */
+  font-size: 0.95rem;
+}
+
+/* Fixed the squished text issue */
+.desktop-links {
+  display: flex;
+  gap: 30px;
+  margin-left: 30px; /* Space between the hamburger menu and the words */
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.location {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-icons a {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+
+.nav-icons a:hover {
+  opacity: 0.7;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: var(--c-mahogany);
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .desktop-links, .desktop-only {
+    display: none !important;
+  }
+}
+/* Update navbar positioning so the wrapper holds the relative position for the dropdown */
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--c-cream);
+  border-bottom: 1px solid rgba(57, 8, 10, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--c-cream);
+  position: relative; /* Keeps it above the mega menu */
+  z-index: 101;
+}
+
+.about-toggle {
+  background: transparent;
+  border: none;
+  color: var(--c-mahogany);
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.about-toggle:hover {
+  text-decoration: underline;
+}
+
+/* Mega Menu Styles */
+.about-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--c-cream);
+  border-bottom: 1px solid rgba(57, 8, 10, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  
+  /* Animation properties */
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99; /* Below the main navbar */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-mega-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mega-menu-links {
+  display: flex;
+  gap: 40px;
+}
+
+.mega-menu-links a {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--c-mahogany);
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.mega-menu-links a:hover {
+  opacity: 0.6;
+}
+
+.close-mega-menu {
+  background: transparent;
+  border: none;
+  color: var(--c-mahogany);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-mega-menu:hover {
+  transform: scale(1.1);
+}
+
+/* Ensure mobile hides the mega menu links */
+@media (max-width: 900px) {
+  .about-mega-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  .logo-link svg {
+    width: 150px; /* Scales down the logo on mobile */
+  }
+  .nav-left {
+    gap: 15px;
+  }
+  .nav-right {
+    gap: 15px;
+  }
+}

@@ -1,0 +1,333 @@
+.page-container {
+  padding: 80px 40px;
+  background-color: var(--c-cream);
+  color: var(--c-mahogany);
+  min-height: 70vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 60px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Responsive Grids for Inner Pages */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.three-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Forms */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-form input, .contact-form textarea, .contact-form select {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--c-mahogany);
+  background: transparent;
+  color: var(--c-mahogany);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* FAQ Accordion */
+.faq-list {
+  max-width: 800px;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(57, 8, 10, 0.2);
+  padding: 25px 0;
+}
+
+.faq-question {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.faq-answer {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 40px 20px;
+  }
+  .page-header {
+    font-size: 2.8rem;
+  }
+  .split-grid {
+    grid-template-columns: 1fr; /* Stack left/right content */
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .three-col-grid {
+    grid-template-columns: 1fr; /* Stack portfolio items */
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .faq-question {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================================
+   PORTFOLIO GRID STYLES 
+========================================= */
+
+.portfolio-grid {
+  display: grid;
+  /* Auto-fill creates as many columns as fit, but forces them to be at least 320px wide */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.portfolio-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5; /* Gives a tall, architectural, premium look */
+  overflow: hidden;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.portfolio-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* The dark gradient overlay that sits on top of the image */
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(57, 8, 10, 0.9) 0%,   /* Mahogany color fading up */
+    rgba(57, 8, 10, 0.4) 40%, 
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.4s ease;
+}
+
+/* The text inside the overlay */
+.portfolio-text {
+  color: var(--c-cream);
+  transform: translateY(15px); /* Starts slightly pushed down */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  line-height: 1.1;
+}
+
+.portfolio-text p {
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* === HOVER EFFECTS === */
+
+/* 1. Zoom image slightly */
+.portfolio-img-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* 2. Fade in the dark gradient overlay */
+.portfolio-img-wrapper:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* 3. Slide the text up into place */
+.portfolio-img-wrapper:hover .portfolio-text {
+  transform: translateY(0);
+}
+
+/* Mobile Adjustments for Portfolio */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  /* On mobile, make the overlay permanently visible since there is no "hover" */
+  .portfolio-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(57, 8, 10, 0.85) 0%,
+      transparent 70%
+    );
+    padding: 20px;
+  }
+  
+  .portfolio-text {
+    transform: translateY(0);
+  }
+  
+  .portfolio-text h3 {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* =========================================
+   TEAM & FOUNDERS STYLES 
+========================================= */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  margin-top: 80px;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the image and text */
+  text-align: center;
+}
+
+/* Circular Image Wrapper */
+.team-img-wrapper {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 35px;
+  box-shadow: 0 15px 35px rgba(57, 8, 10, 0.15);
+  border: 1px solid rgba(57, 8, 10, 0.1);
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.team-member:hover .team-img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Placeholder styling for Dharmendra */
+.placeholder-img {
+  background: linear-gradient(135deg, rgba(57, 8, 10, 0.05) 0%, rgba(57, 8, 10, 0.15) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder-img span {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--c-mahogany);
+  opacity: 0.6;
+}
+
+/* Typography for Team Profiles */
+.team-name {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+  color: var(--c-mahogany);
+}
+
+.team-role {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  opacity: 0.7;
+}
+
+.team-bio {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+
+/* MOBILE STYLES FOR TEAM GRID */
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: 1fr; /* Stacks the profiles vertically on phones */
+    gap: 60px;
+    margin-top: 50px;
+  }
+  
+  .team-img-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .team-name {
+    font-size: 2.2rem;
+  }
+}

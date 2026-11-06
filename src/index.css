@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --c-mahogany: #39080A;
+  --c-cream: #F8F4E6;
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'Inter', sans-serif;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--c-cream);
+  color: var(--c-mahogany);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.locked {
+  overflow: hidden; /* Used when loader is active */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.btn-primary {
+  background-color: var(--c-cream);
+  color: var(--c-mahogany);
+  border: 1px solid var(--c-mahogany);
+  padding: 12px 28px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--c-mahogany);
+  color: var(--c-cream);
+}

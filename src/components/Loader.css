@@ -1,0 +1,55 @@
+.greeting-screen {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: var(--c-mahogany);
+  color: var(--c-cream);
+  /* The curve effect */
+  clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+.greeting-screen.state-entering {
+  animation: slideDown 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.greeting-screen.state-initial,
+.greeting-screen.state-loading {
+  transform: translateY(0);
+  clip-path: none;
+}
+
+.greeting-screen.state-leaving {
+  animation: slideUp 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.greeting-word {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    clip-path: ellipse(150% 100% at 50% 100%);
+  }
+  100% {
+    transform: translateY(0);
+    clip-path: none;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    clip-path: none;
+  }
+  100% {
+    transform: translateY(-100%);
+    clip-path: ellipse(150% 100% at 50% 0%);
+  }
+}

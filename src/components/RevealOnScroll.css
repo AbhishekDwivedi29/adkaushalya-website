@@ -1,0 +1,12 @@
+.reveal-wrapper {
+  opacity: 0;
+  transform: translateY(40px); /* Starts slightly lower */
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0); /* Slides up to normal position */
+}

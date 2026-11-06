@@ -1,0 +1,60 @@
+.track-order-page {
+  background-color: var(--c-cream);
+  color: var(--c-mahogany);
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.track-container {
+  max-width: 650px;
+  width: 100%;
+}
+
+.track-container .page-title {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.track-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.track-form-box {
+  margin: 40px 0;
+}
+
+.form-prompt {
+  font-weight: 500 !important;
+  margin-bottom: 20px !important;
+}
+
+.track-form {
+  display: flex;
+  gap: 15px;
+}
+
+.track-form input {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid var(--c-mahogany);
+  background: transparent;
+  color: var(--c-mahogany);
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  outline: none;
+}
+
+.track-form button {
+  padding: 15px 40px;
+}
+
+.contact-prompt a {
+  text-decoration: underline;
+  font-weight: 500;
+}
